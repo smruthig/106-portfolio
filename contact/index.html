@@ -3,53 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact</title>
+        <title>Contact me</title>
 
         <link rel="stylesheet" href="../style.css">
     </head>
 
     <body>
-        <h1>Contact</h1>
+        <nav> 
+            <a href="../index.html" class="navigation-link">Home</a>
+            <a href="../projects/index.html" class="navigation-link">Projects</a>
+            <a href="index.html" class="current navigation-link">Contact</a>
+            <a href="https://github.com/jeh027" target="_blank" class="navigation-link">Profile</a>
+            <a href="../cv_resume/index.html" class="navigation-link">CV/Resume</a>
+        </nav>
 
-        <ul>
-            <li>
-                <nav> 
-                    <a href="../index.html">Home</a>
-                </nav>
-            </li>
-            <li>
-                <nav>
-                    <a href="../projects/index.html">Projects</a>
-                </nav>
-            </li>
-            <li>
-                <nav>
-                    <a href="index.html">Contact</a>
-                </nav>
-            </li>
-            <li>
-                <nav>
-                    <a href="https://github.com/jeh027" target="_blank">Profile</a>
-                </nav>
-            </li>
-            <li>
-                <nav>
-                    <a href="../cv_resume/index.html">CV/Resume</a>
-                </nav>
-            </li>
-        </ul>
+        <h1 class="title">Contact me</h1>
 
         <form action="mailto:jeh027@ucsd.edu" method="POST" enctype="text/plain">
-            <label>Email:</label>
-            <input name="email" type="email">
+            <label>Email:
+                <input name="email" type="email">
+            </label>
+            
+            <label>Subject:
+                <input name="subject" type="text">
+            </label>
 
-            <label>Subject:</label>
-            <input name="subject" type="text">
+            <label>Message:
+                <textarea name="body"></textarea>
+            </label>
 
-            <label>Body:</label>
-            <textarea name="body"></textarea>
-
-            <button type="submit">Submit</button>
+            <button type="submit">Send</button>
         </form>
 
     </body>

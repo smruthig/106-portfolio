@@ -3,13 +3,94 @@ body { /* type selector */
          and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
+    max-width: 50em;
+    margin-inline: auto; /* max(1em, (100% - 100ch) / 2) */
+    padding: 1em;
 }
 
 .responsive-image { 
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
 }
 
 .location { 
-    float: right; 
+    float: right;
+}
+
+.navigation-link {
+    flex: 1; /* blue part of the object */
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding: 0.5em;
+}
+
+nav {
+    display: flex; /* this makes sense now */
+    margin-bottom: 5%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: oklch(80% 3% 200)
+}
+
+.current {
+    border-bottom-width: 0.4em; /* of the home object */
+    border-bottom-style: solid;
+    border-bottom-color: oklch(80% 3% 200);
+    padding-bottom: 0.4em; /* push link back down */
+}
+
+html {
+    --color-accent: oklch(65% 50% 0); /* sets accent color (custom property) */
+    accent-color: var(--color-accent); /* applies accent color (custom property) to entire document */
+}
+
+.navigation-link:hover {
+    border-bottom-width: 0.4em;
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-accent); /* references accent color (custom property) */
+    background-color: oklch(from var(--color-accent) 95% 5% h); /* 95% lightness, 5% chroma, hue remains the same */
+    padding-bottom: 0.4em;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em
+}
+
+label {
+    display: contents; /* displayed as if they were direct children of its parent element (needed for grid) */
+}
+
+button {
+    grid-column: 1 / -1;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* adjusts the number of columns based on the container's width, at least 15em wide but fill proportionally if extra space */
+    gap: 1em;
+}
+
+.projects article {
+    grid-template-rows: subgrid; /* not too sure about this to be honest */
+    grid-row: span 3;
+}
+
+.projects article h2 {
+    margin-bottom: 0;
+}
+
+h1.title { /* this doesn't seem like the most appropriate approach */
+    font-size: 400%;
+}
+
+.to-center { /* for resume title */
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    text-wrap: balance;
 }
