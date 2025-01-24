@@ -9,20 +9,17 @@
     </head>
 
     <body>
-        <nav> 
+        <!-- <nav> 
             <a href="../index.html" class="navigation-link">Home</a>
             <a href="../projects/index.html" class="navigation-link">Projects</a>
-            <a href="index.html" class="current navigation-link">Contact</a>
+            <a href="index.html" class="navigation-link">Contact</a>
             <a href="https://github.com/jeh027" target="_blank" class="navigation-link">Profile</a>
-            <a href="../cv_resume/index.html" class="navigation-link">CV/Resume</a>
-        </nav>
+            <a href="../cv_resume/index.html" class="navigation-link">CV</a>
+        </nav> -->
 
         <h1 class="title">Contact me</h1>
 
-        <form action="mailto:jeh027@ucsd.edu" method="POST" enctype="text/plain">
-            <label>Email:
-                <input name="email" type="email">
-            </label>
+        <form id="email-form" action="mailto:jeh027@ucsd.edu" method="GET">
             
             <label>Subject:
                 <input name="subject" type="text">
@@ -35,5 +32,8 @@
             <button type="submit">Send</button>
         </form>
 
+
+        <!--links to global.js -->
+        <script type="module" src="../global.js"></script>
     </body>
 </html>
