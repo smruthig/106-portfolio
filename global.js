@@ -58,7 +58,7 @@ for (let p of pages) {
 
 }
 
-document.body.insertAdjacentHTML( 
+document.body.insertAdjacentHTML(  // why doesn't this work without a <div>
     'afterbegin',
     `
     <div class="color-scheme">
