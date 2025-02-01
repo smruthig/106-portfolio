@@ -56,7 +56,7 @@ let svg = document.querySelector("svg");
 let legend = document.querySelector(".legend");
 let colors = d3.scaleOrdinal(d3.schemeTableau10); // ordinal and sequential color scales to generate colors based on data
 // step 5
-export let selectedIndex = -1;
+let selectedIndex = -1;
 
 for (let i = 0; i < arcs.length; i++) {
     const svgNS = "http://www.w3.org/2000/svg"; // to create <path> tag
