@@ -74,7 +74,7 @@ document.body.insertAdjacentHTML(  // why doesn't this work without a <div>
     `
 );
 
-let selectTheme = document.querySelector('#set-theme');
+let selectTheme = document.querySelector('#set-theme'); // no default set, so sometimes the selector will be empty
 
 selectTheme.addEventListener('input', function (event) { // input: triggered whenever the value of an input, textarea, or select element is changed
     document.documentElement.style.setProperty('color-scheme', event.target.value.toLowerCase()); // gets color-scheme from html root and modify inline style
@@ -107,3 +107,85 @@ emailForm?.addEventListener('submit', function (event) { // conditional to check
     location.href = new_url;
 
 });
+
+// lab 4.
+export async function fetchJSON(url) {
+    try {
+        // Fetch the JSON file from the given URL
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch projects: ${response.statusText}`);
+        }
+        // console.log(response);
+        const data = await response.json();
+        return data;
+
+
+    } catch (error) {
+        console.error('Error fetching or parsing JSON data:', error);
+    }
+}
+
+// console.log(fetchJSON('../lib/projects.json'))
+
+// function validateProject(project) {
+//     return project && project.image && project.title && project.description; // checks if all elements exist
+// }
+
+// function validateContainer(container) {
+//     return container !== 'null' && container instanceof HTMLElement;
+// }
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') { // project = list, containerElement = where the articles are located
+    containerElement.innerHTML = ''; // ensures no duplication
+
+    // if (!validateContainer(containerElement)) {
+    //     console.error('Invalid container data');
+    //     return;
+    // }
+
+    for (let project of projects) {
+
+        // if (!validateProject(project)) {
+        //     console.error('Invalid project data');
+        //     return;
+        // }
+    
+        const article = document.createElement('article'); // security, reusability, organization
+        // header
+        const headingElement = document.createElement(headingLevel);
+        headingElement.textContent = project.title;
+        article.appendChild(headingElement);
+        // image
+        const imgElement = document.createElement('img');
+        imgElement.src = project.image;
+        imgElement.alt = project.title;
+        article.appendChild(imgElement);
+        // description
+        const textElement = document.createElement('p');
+        textElement.textContent = project.description;
+        article.appendChild(textElement);
+        // year
+        const yearElement = document.createElement('p');
+        yearElement.textContent = project.year;
+        article.appendChild(yearElement);
+
+        // article.innerHTML = `
+        //                         <h3>${project.title}</h3>
+        //                         <img src="${project.image}" alt="${project.title}">
+        //                         <p>${project.description}</p>
+        //                     `;
+
+        containerElement.appendChild(article)
+    }
+};
+
+export function numberProjects(projects) {
+    const titleElement = document.querySelector('.projects-title'); // gets projects-title class and adds text content
+    titleElement.textContent = `${projects.length} Projects`;
+};
+
+export async function fetchGitHubData(username) { // one of the few APIs left that provides public data without requiring us to authenticate :(
+    return fetchJSON(`https://api.github.com/users/${username}`); // perform HTTP request to retrieve data from a server and parse it as JSON
+};

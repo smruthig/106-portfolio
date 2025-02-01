@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Hard Courts, How Did We Get Here?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Study about the evolution and impact of tennis court surfaces on the game and player performance.",
+        "year": 2023
+    },
+    {
+        "title": "Power Outage Data Exploration & Prediction",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Study aims to investigate the factors that lead to power outage events with the hopes of gaining valuable insights into why these events occur and the ways in which outages can be mitigated.",
+        "year": 2023
+    },
+    {
+        "title": "MNIST Convolutional Neural Network Classifier",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Application leverages a Convolutional Neural Network Classifier, a deep learning model, to recognize and classify handwritten digits from the MNIST database.",
+        "year": 2024
+    },
+    {
+        "title": "Financial Education Application on iOS and Android",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Financial education platform aimed at low-income families in Brazil to teach real-life money management skills.",
+        "year": 2025
+    },
+    {
+        "title": "Consumption from Fossil Fuels Per Country Over Time",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Visual of energy consumption from fossil fuels for each country over time. This will allow readers to understand how the country of their choosing's consumption of fossil fuel has changed over time. We decided to plot discrete data points onto a line graph to better demonstrate trend over time.",
+        "year": 2023
+    },
+    {
+        "title": "Linear Regression (Jared Wilber) - Placeholder",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "'Interactively learn about linear regression models as they are commonly used in the context of machine learning.'",
+        "year": 2022
+    },
+    {
+        "title": "Train, Test, And Validation Sets (Jared Wilber) - Placeholder",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "'Learn why it is best practice to split your data into training, testing, and validation sets, and explore the utility of each with a live machine learning model.",
+        "year": 2022
+    },
+    {
+        "title": "Equality of Odds (Jared Wilber) - Placeholder",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "'Explore equality of odds, a metric used to quantify unfairness and remove bias from machine learning models.'",
+        "year": 2023
+    },
+    {
+        "title": "Logistic Regression (Jared Wilber) - Placeholder",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "'Learn how logistic regression can be used for binary classification in machine learning through an interactive example.'",
+        "year": 2022
+    },
+    {
+        "title": "Precision & Recall (Jared Wilber) - Placeholder",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "'When it comes to evaluating classification models, accuracy is often a poor metric. This article covers two common alternatives, Precision and Recall, as well as the F1-score and Confusion Matrices.",
+        "year": 2022
+    },
+    {
+        "title": "Decision Trees (Jared Wilber) - Placeholder",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "'An explanation of the Decision Tree algorithm in machine learning: how the tree makes its splits, the concept of Entropy and Information Gain, and why going too deep is problematic.'",
+        "year": 2022
+    },
+    {
+        "title": "Random Forest (Jared Wilber) - Placeholder",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "'Learn how the majority vote and well-placed randomness can extend the decision tree model to one of machine learning's most widely-used algorithms, the Random Forest.'",
+        "year": 2022
+    }
+]

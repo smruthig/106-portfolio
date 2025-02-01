@@ -44,7 +44,7 @@ nav {
 html {
     --color-accent: oklch(50% 0.15 5.24); /* sets accent color (custom property) */
     accent-color: var(--color-accent); /* applies accent color (custom property) to entire document */
-    color-scheme: light dark; 
+    color-scheme: light dark;
 }
 
 nav a:hover {
@@ -73,11 +73,12 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* adjusts the number of columns based on the container's width, at least 15em wide but fill proportionally if extra space */
     gap: 1em;
+    padding-top: 3em;
 }
 
 .projects article {
     display: grid;
-    grid-template-rows: 1fr auto 15em; /* look back at this later */
+    grid-template-rows: 1fr auto 13em; /* look back at this later */
     gap: 1em;
 }
 
@@ -107,4 +108,96 @@ h1, h2, h3, h4, h5, h6 {
 .color-scheme, .color-scheme select {
     font-size: 80%;
     font-family: inherit;
+}
+
+.home-info {
+    font-size: 150%;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-family: monospace;
+    font-size: 170%;
+}
+
+dt {
+    grid-row: 1;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+dd {
+    grid-row: 2;
+    text-align: center;
+}
+
+
+/* for lab 5, d3 pie graphics */
+svg {
+    max-width: 20em;
+    margin-block: 2em;
+  
+    /* Do not clip shapes outside the viewBox */
+    overflow: visible;
+}
+
+/* not sure what this code does, come back to this later */
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+    list-style: none;
+    padding: 2em;
+    border: 2px solid #ccc; /* Add a border to the legend */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    margin: 1em;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+li::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    background-color: var(--color);
+    border-radius: 4px;
+}
+
+/* this doesn't work */
+.container {
+    flex: 1;
+}
+
+
+/* highlighting hovered wedge */
+
+svg:has(path:hover) {  /* must be svg:hover instead of svg:has(path:hover) */
+    path:not(:hover) {
+        opacity: 50%;
+    }
+}
+
+path {
+    transition: 300ms;
+}
+
+.selected {
+    --color: oklch(60% 45% 0) !important;   /* why the !important? Because we are trying to override the --color variable set */
+  
+    &:is(path) {
+      fill: var(--color);
+    }
+}
+
+path {
+    /* ... */
+    cursor: pointer;
 }
