@@ -136,15 +136,21 @@ dd {
 
 
 /* for lab 5, d3 pie graphics */
-svg {
+#projects-plot {
     max-width: 20em;
-    margin-block: 2em;
-  
+    margin-bottom: 1em;
+
     /* Do not clip shapes outside the viewBox */
     overflow: visible;
+
+    &:has(path:hover) { /* highlighting hovered wedge */
+        path:not(:hover) {
+            opacity: 0.5;
+        }
+    }
 }
 
-/* not sure what this code does, come back to this later */
+
 ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
@@ -174,15 +180,6 @@ li::before {
 /* this doesn't work */
 .container {
     flex: 1;
-}
-
-
-/* highlighting hovered wedge */
-
-svg:has(path:hover) {  /* must be svg:hover instead of svg:has(path:hover) */
-    path:not(:hover) {
-        opacity: 50%;
-    }
 }
 
 path {
