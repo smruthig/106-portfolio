@@ -1,218 +1,296 @@
-body { /* type selector */
-    /* Set line height to 1.5 times the font size
+body {
+  /* type selector */
+  /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
        */
-    font: 100%/1.5 system-ui;
-    max-width: 50em; /* let’s stop the content from getting so wide */
-    margin-inline: auto; /* let’s center that content; alt: max(1em, (100% - 100ch) / 2) */
-    padding: 1em; /* prevent from touching the edges of the viewport */
+  font: 100%/1.5 system-ui;
+  max-width: 50em; /* let’s stop the content from getting so wide */
+  margin-inline: auto; /* let’s center that content; alt: max(1em, (100% - 100ch) / 2) */
+  padding: 1em; /* prevent from touching the edges of the viewport */
 }
 
-.responsive-image { 
-    max-width: 100%;
-    height: auto;
+.responsive-image {
+  max-width: 100%;
+  height: auto;
 }
 
-.location { 
-    float: right;
+.location {
+  float: right;
 }
 
 nav a {
-    flex: 1; /* blue part of the object */
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    padding: 0.5em;
+  flex: 1; /* blue part of the object */
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
 }
 
 nav {
-    --border-color: oklch(50% 10% 200 / 40%); /* canvas and canvastext ensures web content remains visually consistent with operating system or web browser */
-    display: flex; /* this makes sense now */
-    margin-bottom: 5%;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: var(--border-color);
+  --border-color: oklch(
+    50% 10% 200 / 40%
+  ); /* canvas and canvastext ensures web content remains visually consistent with operating system or web browser */
+  display: flex; /* this makes sense now */
+  margin-bottom: 5%;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--border-color);
 }
 
 .current {
-    border-bottom-width: 0.4em; /* of the home object */
-    border-bottom-style: solid;
-    border-bottom-color: var(--border-color);
-    padding-bottom: 0.4em; /* push link back down */
+  border-bottom-width: 0.4em; /* of the home object */
+  border-bottom-style: solid;
+  border-bottom-color: var(--border-color);
+  padding-bottom: 0.4em; /* push link back down */
 }
 
 html {
-    --color-accent: oklch(50% 0.15 5.24); /* sets accent color (custom property) */
-    accent-color: var(--color-accent); /* applies accent color (custom property) to entire document */
-    color-scheme: light dark;
+  --color-accent: oklch(
+    50% 0.15 5.24
+  ); /* sets accent color (custom property) */
+  accent-color: var(
+    --color-accent
+  ); /* applies accent color (custom property) to entire document */
+  color-scheme: light dark;
 }
 
 nav a:hover {
-    border-bottom-width: 0.4em;
-    border-bottom-style: solid;
-    border-bottom-color: var(--color-accent); /* references accent color (custom property) */
-    background-color: color-mix(in oklch, var(--color-accent), canvas 85%); /* mix two colors together */
-    padding-bottom: 0.4em;
+  border-bottom-width: 0.4em;
+  border-bottom-style: solid;
+  border-bottom-color: var(
+    --color-accent
+  ); /* references accent color (custom property) */
+  background-color: color-mix(
+    in oklch,
+    var(--color-accent),
+    canvas 85%
+  ); /* mix two colors together */
+  padding-bottom: 0.4em;
 }
 
 form {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1em
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
 }
 
 label {
-    display: contents; /* displayed as if they were direct children of its parent element (needed for grid) */
+  display: contents; /* displayed as if they were direct children of its parent element (needed for grid) */
 }
 
 button {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* adjusts the number of columns based on the container's width, at least 15em wide but fill proportionally if extra space */
-    gap: 1em;
-    padding-top: 3em;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(15em, 1fr)
+  ); /* adjusts the number of columns based on the container's width, at least 15em wide but fill proportionally if extra space */
+  gap: 1em;
+  padding-top: 3em;
 }
 
 .projects article {
-    display: grid;
-    grid-template-rows: 1fr auto 13em; /* look back at this later */
-    gap: 1em;
+  display: grid;
+  grid-template-rows: 1fr auto 13em; /* look back at this later */
+  gap: 1em;
 }
 
 .projects article h2 {
-    margin: 0; /* as said in the write up */
+  margin: 0; /* as said in the write up */
 }
 
-h1.title { /* this doesn't seem like the most appropriate approach */
-    font-size: 400%;
+h1.title {
+  /* this doesn't seem like the most appropriate approach */
+  font-size: 400%;
 }
 
-.to-center { /* for resume title */
-    text-align: center;
+.to-center {
+  /* for resume title */
+  text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.1;
-    text-wrap: balance;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+  text-wrap: balance;
 }
 
 .color-scheme {
-    position: absolute;
-    top: 1em;
-    right: 1em;
+  position: absolute;
+  top: 1em;
+  right: 1em;
 }
 
-.color-scheme, .color-scheme select {
-    font-size: 80%;
-    font-family: inherit;
+.color-scheme,
+.color-scheme select {
+  font-size: 80%;
+  font-family: inherit;
 }
 
 .home-info {
-    font-size: 150%;
-    padding-top: 1.5em;
-    padding-bottom: 0.5em;
+  font-size: 150%;
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
 }
 
 dl {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    font-family: monospace;
-    font-size: 170%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-family: monospace;
+  font-size: 170%;
 }
 
 dt {
-    grid-row: 1;
-    text-align: center;
-    text-transform: uppercase;
+  grid-row: 1;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 dd {
-    grid-row: 2;
-    text-align: center;
+  grid-row: 2;
+  text-align: center;
 }
-
 
 /* for lab 5, d3 pie graphics */
 #projects-plot {
-    max-width: 20em;
-    margin-bottom: 1em;
+  max-width: 20em;
+  margin-bottom: 1em;
 
-    /* Do not clip shapes outside the viewBox */
-    overflow: visible;
+  /* Do not clip shapes outside the viewBox */
+  overflow: visible;
 
-    &:has(path:hover) { /* highlighting hovered wedge */
-        path:not(:hover) {
-            opacity: 0.5;
-        }
+  &:has(path:hover) {
+    /* highlighting hovered wedge */
+    path:not(:hover) {
+      opacity: 0.5;
     }
+  }
 }
 
-
 ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
-    list-style: none;
-    padding: 2em;
-    border: 2px solid #ccc; /* Add a border to the legend */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    margin: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+  list-style: none;
+  padding: 2em;
+  border: 2px solid #ccc; /* Add a border to the legend */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  margin: 1em;
 }
 
 li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 li::before {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-    background-color: var(--color);
-    border-radius: 4px;
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background-color: var(--color);
+  border-radius: 4px;
 }
 
 /* this doesn't work */
 .container {
-    flex: 1;
+  flex: 1;
 }
 
 path {
-    transition: 300ms;
+  transition: 300ms;
 }
 
 .selected {
-    --color: oklch(60% 45% 0) !important;   /* why the !important? Because we are trying to override the --color variable set */
-  
-    &:is(path) {
-      fill: var(--color);
-    }
+  --color: oklch(
+    60% 45% 0
+  ) !important; /* why the !important? Because we are trying to override the --color variable set */
+
+  &:is(path) {
+    fill: var(--color);
+  }
 }
 
 path {
-    /* ... */
-    cursor: pointer;
+  /* ... */
+  cursor: pointer;
 }
 
 stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    font-family: monospace;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: monospace;
 }
-
 
 dt {
-    text-transform: uppercase;
-    padding: 1em 2em;
+  text-transform: uppercase;
+  padding: 1em 2em;
 }
 
+dd {
+  text-align: center;
+}
 
+dl.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: absolute;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 100%;
+  transition-duration: 100ms;
+  transition-property: opacity, visibility;
+}
 
-dd {    
-    text-align: center;
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  backdrop-filter: blur(5px);
+  padding: 1em;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
 }

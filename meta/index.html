@@ -13,9 +13,30 @@
 
     <p>This page includes stats about the code on this website.</p>
 
+    <div id="stats"></div>
+
+    <h2>Commits by time of day</h2>
+    <div id="chart"></div>
+
+    <dl id="commit-tooltip" class="info tooltip">
+      <dt>Commit</dt>
+      <dd>
+        <a href="" id="commit-link" target="_blank"></a>
+      </dd>
+
+      <dt>Date</dt>
+      <dd id="commit-date"></dd>
+
+      <!-- Add: Time, author, lines edited -->
+    </dl>
+
+    <p id="selection-count">No commits selected</p>
+
+    <dl id="language-breakdown" class="stats"></dl>
+
     <!--links to global.js -->
     <script type="module" src="../global.js"></script>
-    <script type="module" src="projects.js"></script>
+    <script type="module" src="main.js"></script>
     <script src="https://d3js.org/d3.v7.js"></script>
   </body>
 </html>
