@@ -198,3 +198,21 @@ path {
     /* ... */
     cursor: pointer;
 }
+
+stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: monospace;
+}
+
+
+dt {
+    text-transform: uppercase;
+    padding: 1em 2em;
+}
+
+
+
+dd {    
+    text-align: center;
+}
