@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "prebuild": "npx elocuent -d . -o meta/loc.csv",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "elocuent": "^0.0.3"
+  }
+}
